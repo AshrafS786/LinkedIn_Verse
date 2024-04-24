@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,16 +17,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider 
+    appearance={{
+      // layout: {
+      //   socialButtonsVariant: "iconButton",
+      //   logoImageUrl: "/icons/yoom-logo.svg",
+      // },
+      // variables: {
+      //   colorText: "#fff",
+      //   colorPrimary: "#0E78F9",
+      //   colorBackground: "#1C1F2E",
+      //   colorInputBackground: "#252A41",
+      //   colorInputText: "#fff",
+      // },
+    }}> 
+      
     <html lang="en">
-      <body className={inter.className}>
+      <body className="min-h-screen flex flex-col">
         {/* Toaster */}
 
-        <header>{/* Header */}</header>
+        <header className="border-b sticky top-0 bg-white z-50 "><Header /></header>
 
-        <div>
+        <div className="bg-[#F4F2EE] flex-1 w-full">
           <main>{children}</main>
         </div>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
