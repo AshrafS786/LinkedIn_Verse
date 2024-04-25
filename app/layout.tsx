@@ -17,32 +17,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider 
-    appearance={{
-      // layout: {
-      //   socialButtonsVariant: "iconButton",
-      //   logoImageUrl: "/icons/yoom-logo.svg",
-      // },
-      // variables: {
-      //   colorText: "#fff",
-      //   colorPrimary: "#0E78F9",
-      //   colorBackground: "#1C1F2E",
-      //   colorInputBackground: "#252A41",
-      //   colorInputText: "#fff",
-      // },
-    }}> 
-      
-    <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        {/* Toaster */}
+    <ClerkProvider
+    // appearance={{
+    //   // layout: {
+    //   //   socialButtonsVariant: "iconButton",
+    //   //   logoImageUrl: "/icons/yoom-logo.svg",
+    //   // },
+    //   // variables: {
+    //   //   colorText: "#fff",
+    //   //   colorPrimary: "#0E78F9",
+    //   //   colorBackground: "#1C1F2E",
+    //   //   colorInputBackground: "#252A41",
+    //   //   colorInputText: "#fff",
+    //   // },
+    // }}
+    >
+      <html lang="en">
+        <body className="min-h-screen flex flex-col">
+          {/* Toaster */}
 
-        <header className="border-b sticky top-0 bg-white z-50 "><Header /></header>
+          <header className="border-b sticky top-0 bg-white z-50 ">
+            <Header />
+          </header>
 
-        <div className="bg-[#F4F2EE] flex-1 w-full">
-          <main>{children}</main>
-        </div>
-      </body>
-    </html>
+          <div className="bg-[#F4F2EE] flex-1 w-full">
+            <main>{children}</main>
+          </div>
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
